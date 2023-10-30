@@ -18,7 +18,6 @@ import { Box, Button } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { setisCreating } from "../../store/slices/configSlice";
 import NewProductDialog from "../NewProductDialog";
-import { BRAND_COLOR } from "../../shared/constants/styleConstants";
 
 const PRODUCTS_COLUMNS = [
   ImageColumn,
