@@ -1,4 +1,5 @@
-![Untitled (Copy)](https://github.com/shauryapuri97/shoppr/assets/23358500/652875c3-1bfb-4aec-b6ca-5c96b29ecc71)
+![Untitled (Copy)](https://github.com/shauryapuri97/shoppr/assets/23358500/f0cbaa64-2e24-481f-8e94-3052491f53b2)
+
 
 This is a mock shop management system designed as a test project, it uses the Fake Store API[https://fakestoreapi.com/docs] and allows the user to view, edit, delete and create products.
 
@@ -6,7 +7,7 @@ Technologies: Vite, React, Redux, MaterialUI
 
 Time taken: 4 hours
 
-https://github.com/shauryapuri97/shoppr/assets/23358500/f15e6f4c-ce4b-431b-94ae-08acbd6a59f7
+https://github.com/shauryapuri97/shoppr/assets/23358500/7eede88f-027f-43ce-afbb-9f16bdd36ad7
 
 
 ## How to run
@@ -38,7 +39,9 @@ Idea is to get the username at login when implemented and pass that information 
 ## Design
 I tried to use figma to come up with a minimal logo for the platform.
 
-<img width="1440" alt="Screenshot 2023-10-30 at 23 17 11" src="https://github.com/shauryapuri97/shoppr/assets/23358500/df7df81b-148b-4bdd-b5ef-e98fc80e965f">
+<img width="1440" alt="Screenshot 2023-10-30 at 23 17 11" src="https://github.com/shauryapuri97/shoppr/assets/23358500/92114338-4b74-4a8f-ba26-f1cc6309f38f">
+
+
 
 ## Scalability / Nice to haves
 1. Allow the user to upload images for Create / Edit purposes.
