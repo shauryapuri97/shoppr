@@ -119,14 +119,16 @@ export const deleteProduct = createAsyncThunk(
         alert(`Item ${id} was successfully deleted!`);
         const newData = data.filter((row) => row.id !== id);
         dispatch(setData(newData));
+      } else {
+        alert(`Cannot find item to be deleted!`);
       }
+
       return null;
     } catch ({ response }) {
       if (!response) {
         throw err;
       }
 
-      alert(`Cannot find item to be deleted!`);
       return rejectWithValue(response.data);
     }
   }

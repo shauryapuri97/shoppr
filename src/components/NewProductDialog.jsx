@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { CustomDialog } from "../shared/components/CustomDialog";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -39,13 +39,13 @@ const NewProductDialog = () => {
     dispatch(setisCreating(false));
   };
 
-  const onSubmit = () => {
+  const onSubmit = useCallback(() => {
     dispatch(createProduct(fields));
     onClose();
-  };
+  }, [fields]);
 
   useEffect(() => {
-    if (productCategories) {
+    if (productCategories.length) {
       setFields({ ...fields, category: productCategories[0] });
     }
   }, [productCategories]);
@@ -110,10 +110,7 @@ const NewProductDialog = () => {
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose}>Cancel</Button>
-        <Button
-          onClick={onSubmit}
-          disabled={!isFormValid}
-        >
+        <Button onClick={onSubmit} disabled={!isFormValid}>
           Submit
         </Button>
       </DialogActions>

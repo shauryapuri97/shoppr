@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   DialogContent,
   DialogTitle,
@@ -35,18 +35,23 @@ const ActionDialog = () => {
 
   const [fields, setFields] = useState(initialise(selectedProduct));
 
+  const isFormValid = useMemo(
+    () => fields.title && fields.price && fields.category,
+    [fields]
+  );
+
   const onClose = () => {
     dispatch(resetActionDialog());
   };
 
-  const onSubmit = () => {
+  const onSubmit = useCallback(() => {
     if (!isEditing) {
       dispatch(deleteProduct(selectedProduct));
     } else {
       dispatch(updateProduct(fields));
     }
     onClose();
-  };
+  }, [isEditing, selectedProduct, fields]);
 
   useEffect(() => {
     setFields(initialise(selectedProduct));
@@ -128,7 +133,9 @@ const ActionDialog = () => {
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose}>Cancel</Button>
-        <Button onClick={onSubmit}>{isEditing ? "Save" : "Confirm"}</Button>
+        <Button onClick={onSubmit} disabled={isEditing && !isFormValid}>
+          {isEditing ? "Save" : "Confirm"}
+        </Button>
       </DialogActions>
     </CustomDialog>
   );
